@@ -31,7 +31,7 @@ function Navigation ({activeTab, onSelectTab}: NavigationProps) {
 
     ]
 
-    const handleChange = (event: React.SyntheticEvent, newValue: string)=> { 
+    const handleChange = (_event: React.SyntheticEvent, newValue: string)=> { 
         onSelectTab(newValue);
     }
 
