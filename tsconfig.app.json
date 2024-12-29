@@ -7,6 +7,12 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    // Using @ as a reference to src folder
+    "baseUrl":"src",
+    "paths": {
+      "@/*":["*"]
+    },
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,

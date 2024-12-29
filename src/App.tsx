@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Navigation from './components/navigation/Navigation';
-import PageContainer from './pages/PageContainer';
+import Navigation from '@/components/navigation/Navigation';
+import PageContainer from '@/pages/PageContainer';
 
 
 
