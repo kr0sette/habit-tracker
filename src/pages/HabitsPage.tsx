@@ -1,4 +1,4 @@
-function Habits (){
+function HabitsPage (){
     return(
         <>
         <div id="page_title" className="title"></div>
@@ -8,4 +8,4 @@ function Habits (){
 
 }
 
-export default Habits;
+export default HabitsPage;

@@ -1,4 +1,4 @@
-function Identity (){
+function IdentityPage (){
     return(
         <>
         <div id="page_title" className="title"></div>
@@ -8,4 +8,4 @@ function Identity (){
 
 }
 
-export default Identity;
+export default IdentityPage;

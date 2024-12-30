@@ -1,4 +1,4 @@
-function Reflections (){
+function ReflectionsPage (){
     return(
         <>
         <div id="page_title" className="title"></div>
@@ -8,4 +8,4 @@ function Reflections (){
 
 }
 
-export default Reflections;
+export default ReflectionsPage;
