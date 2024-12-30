@@ -1,59 +1,34 @@
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import Face from '@mui/icons-material/Face';
-import List from '@mui/icons-material/List';
-import Analytics from '@mui/icons-material/Analytics';
 import styles from './navigation.module.css';
-
-interface NavigationProps {
-    activeTab: string,
-    onSelectTab: (item: string) => void
-}
+import { Link, useLocation } from 'react-router-dom';
+import { navItems } from '@/constants/navItems';
 
 
-function Navigation ({activeTab, onSelectTab}: NavigationProps) {
-    const navItems = [
-        {
-            value: 'identity',
-            label: 'Identity',
-            icon: <Face />
-        },
-        {
-            value: 'habits',
-            label: 'Habits',
-            icon: <List />
-        },
-        {
-            value: 'reflections',
-            label: 'Reflections',
-            icon: <Analytics />
-        }
 
-    ]
-
-    const handleChange = (_event: React.SyntheticEvent, newValue: string)=> { 
-        onSelectTab(newValue);
-    }
-
-
+function Navigation () {
+    const { pathname } = useLocation();
+    const activeTab = navItems.find( item => item.path === pathname)?.value || '';
 
     return <>
-    <div id="navigation" className={styles.navigation}>
-        <BottomNavigation value={activeTab} onChange={handleChange}>
-            {
-                navItems.map(({value, label ,icon}) => (
-                    <BottomNavigationAction 
-                        className="navItem"
-                        key={value}
-                        value={value}
-                        label={label}
-                        icon={icon}
-                    />
-                ))
-            }
+        <div id="navigation" className={styles.navigation}>
+            <BottomNavigation value={activeTab}>
+                {
+                    navItems.map(({value, label , icon, path}) => (
+                            <BottomNavigationAction 
+                                className="navItem"
+                                key={value}
+                                value={value}
+                                label={label}
+                                icon={icon}
+                                component={Link}
+                                to={path}
+                            />
+                    ))
+                }
 
-        </BottomNavigation>
-    </div>
+            </BottomNavigation>
+        </div>
     </>
 }
 

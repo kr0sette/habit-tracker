@@ -1,10 +1,10 @@
 import styles from './PageContainer.module.css';
-import Habits from './HabitsPage';
+import { Outlet } from 'react-router-dom';
 
 function PageContainer () {
 
     return <div id="page_container" className={styles.pageContainer}>
-        <Habits />
+        <Outlet />
     </div>
 
 }
