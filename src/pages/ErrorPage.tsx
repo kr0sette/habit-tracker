@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
+import Header from "@/components/header/Header";
 
 function ErrorPage (){
     return(
         <>
-        <div id="page_title" className="title"></div>
-        <h2>Error</h2>
-        <div>Page not found</div>
-        <Link to="/">Take me home</Link>
+            <Header title="Error" />
+            <div>Page not found</div>
+            <Link to="/">Take me home</Link>
         </>
     )
 

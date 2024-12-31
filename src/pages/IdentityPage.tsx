@@ -1,8 +1,9 @@
+import Header from "@/components/header/Header";
+
 function IdentityPage (){
     return(
         <>
-        <div id="page_title" className="title"></div>
-        <h2>Identity</h2>
+            <Header title='Identity' />
         </>
     )
 

@@ -1,8 +1,9 @@
+import Header from "@/components/header/Header";
+
 function HabitsPage (){
     return(
         <>
-        <div id="page_title" className="title"></div>
-        <h2>Habits</h2>
+            <Header title='Habits' />
         </>
     )
 
