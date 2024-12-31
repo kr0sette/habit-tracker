@@ -1,12 +1,15 @@
 import Navigation from '@/components/navigation/Navigation';
-import PageContainer from '@/pages/PageContainer';
+import Container from '@mui/material/Container';
+import { Outlet } from 'react-router-dom';
 
 
 
 function App () {
   return <div id="app_container">
     <Navigation />
-    <PageContainer />
+    <Container maxWidth="lg">
+      <Outlet />
+    </Container>
     </div>
 
 }
