@@ -8,7 +8,7 @@ interface HabitsListProps {
 }
 
 
-function HabitsList ({habitCount,identityCount}:HabitsListProps) {
+function HabitsList ({identityCount}:HabitsListProps) {
 
 
     if(identityCount === 0 ) {
