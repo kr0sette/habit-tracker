@@ -1,5 +1,6 @@
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import IdentityCard from './IdentityCard';
 import styles from './identityList.module.css'
 
 interface IdentityListProps {
@@ -14,9 +15,15 @@ function IdentityList ({identityCount}:IdentityListProps) {
 
     return <div className={styles.identityList}>
             <List>
-                <ListItem>Test 1</ListItem>
-                <ListItem>Test 2</ListItem>
-                <ListItem>Test 3</ListItem>
+                <ListItem>
+                    <IdentityCard/>
+                </ListItem>
+                <ListItem>
+                    <IdentityCard/>
+                </ListItem>
+                <ListItem>
+                    <IdentityCard/>
+                </ListItem>
             </List>      
         </div>
 
