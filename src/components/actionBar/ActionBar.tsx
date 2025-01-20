@@ -27,6 +27,7 @@ type ActionBarProps = BaseProps & (TabsProps | ButtonProps);
 function ActionBar (props: ActionBarProps) {
     const { showTabs, showButtons} = props;
 
+    //Make sure right props are available to render tabs and buttons
     const renderTabs = (showTabs === true) && 'actionTabs' in props && 'activeTab' in props && 'onTabChange' in props;
     const renderButtons = (showButtons === true)
 
