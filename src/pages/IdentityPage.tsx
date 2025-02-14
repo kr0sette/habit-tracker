@@ -5,9 +5,12 @@ import { identityTabs } from '@/constants/actionBarTabs';
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom"
 import { BaseAppData } from "@/App";
+import NewIdentityModal from "@/components/identity/NewIdentityModal";
 
 
 function IdentityPage (){
+
+    // action bar tab configuration
     const actionBarTabs = identityTabs;
     const [activeTab, setActiveTab] = useState(actionBarTabs[0].value);
     const handleTabChange = (value: string) => {
@@ -15,6 +18,15 @@ function IdentityPage (){
     }
 
     const { identityCount } = useOutletContext<BaseAppData>();
+
+    // action bar button configurations
+    const [newIdentityOpen, setNewIdentityOpen] = useState(false);
+    const openNewIdentityModal = () =>{
+        setNewIdentityOpen(true);
+    }
+    const closeNewIdentityModal = () => {
+        setNewIdentityOpen(false);
+    }
 
 
     return(
@@ -26,8 +38,10 @@ function IdentityPage (){
                 actionTabs = { actionBarTabs }
                 activeTab = { activeTab }
                 onTabChange = { handleTabChange }
+                onNewClick = { openNewIdentityModal }
             />
             <IdentityList identityCount = { identityCount }   />
+            <NewIdentityModal open={newIdentityOpen} onClose={ closeNewIdentityModal }/>
         </>
     )
 
