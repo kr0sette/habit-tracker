@@ -17,6 +17,11 @@ function HabitsPage (){
 
     const { identityCount, habitCount } = useOutletContext<BaseAppData>();
 
+    const test = () => {
+        console.log('Consuming new button clicked');
+    }
+
+
     return(
         <>
             <Header title='Habits' />
@@ -26,6 +31,7 @@ function HabitsPage (){
                 actionTabs = { actionBarTabs }
                 activeTab = { activeTab }
                 onTabChange = { handleTabChange }
+                onNewClick = { test }
             />
             <HabitsList identityCount={ identityCount } habitCount={ habitCount }/>
 
