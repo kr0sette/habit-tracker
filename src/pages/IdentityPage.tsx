@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useOutletContext } from "react-router-dom"
 import { BaseAppData } from "@/App";
 import NewIdentityModal from "@/components/identity/NewIdentityModal";
+import { addNewUser } from "@/services/firestore.service";
 
 
 function IdentityPage (){
@@ -28,6 +29,14 @@ function IdentityPage (){
         setNewIdentityOpen(false);
     }
 
+    // const firebaseTest = async () => {
+
+    //     // const newUserId = await addNewUser();
+    //     // console.log(newUserId);
+    //     console.log(docSnap.data());
+    // }
+
+
 
     return(
         <>
@@ -41,7 +50,7 @@ function IdentityPage (){
                 onNewClick = { openNewIdentityModal }
             />
             <IdentityList identityCount = { identityCount }   />
-            <NewIdentityModal open={newIdentityOpen} onClose={ closeNewIdentityModal }/>
+            <NewIdentityModal open={ newIdentityOpen } onClose={ closeNewIdentityModal }/>
         </>
     )
 
